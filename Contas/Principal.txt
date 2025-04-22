@@ -1,2 +1,0 @@
-API_HOST="v3.football.api-sports.io"
-API_KEY=92b0f9620749f02a49e4a42f82ca8137
