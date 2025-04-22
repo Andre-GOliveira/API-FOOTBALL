@@ -1,0 +1,48 @@
+player.id,player.name,player.pos,player.grid,player.type,team,formation,fixture.id
+1999,M. van Bommel,coach,,coach,Antwerp,4-2-3-1,1121330
+8574,J. Butez,G,1:1,holder,Antwerp,4-2-3-1,1121330
+6898,R. De Laet,D,2:4,holder,Antwerp,4-2-3-1,1121330
+162,T. Alderweireld,D,2:3,holder,Antwerp,4-2-3-1,1121330
+162568,S. Coulibaly,D,2:2,holder,Antwerp,4-2-3-1,1121330
+8701,J. Bataille,D,2:1,holder,Antwerp,4-2-3-1,1121330
+308836,M. Keita,M,3:2,holder,Antwerp,4-2-3-1,1121330
+340154,A. Vermeeren,M,3:1,holder,Antwerp,4-2-3-1,1121330
+191979,J. Ondrejka,M,4:3,holder,Antwerp,4-2-3-1,1121330
+541,J. Ekkelenkamp,M,4:2,holder,Antwerp,4-2-3-1,1121330
+267728,M. Balikwisha,M,4:1,holder,Antwerp,4-2-3-1,1121330
+183,V. Janssen,F,5:1,holder,Antwerp,4-2-3-1,1121330
+303679,Z. Van Den Bosch,D,,substitute,Antwerp,4-2-3-1,1121330
+51308,S. Vines,D,,substitute,Antwerp,4-2-3-1,1121330
+137403,A. Muja,F,,substitute,Antwerp,4-2-3-1,1121330
+161989,C. Scott,M,,substitute,Antwerp,4-2-3-1,1121330
+198347,A. Valencia,F,,substitute,Antwerp,4-2-3-1,1121330
+374902,N. Devalckeneer,G,,substitute,Antwerp,4-2-3-1,1121330
+47998,A. Yusuf,M,,substitute,Antwerp,4-2-3-1,1121330
+162511,S. Lammens,G,,substitute,Antwerp,4-2-3-1,1121330
+39121,C. Ejuke,F,,substitute,Antwerp,4-2-3-1,1121330
+395040,G. Ilenikhena,F,,substitute,Antwerp,4-2-3-1,1121330
+37188,G. Kerk,F,,substitute,Antwerp,4-2-3-1,1121330
+1974,M. Almeyda,coach,,coach,AEK Athens FC,4-2-3-1,1121330
+26821,G. Athanasiadis,G,1:1,holder,AEK Athens FC,4-2-3-1,1121330
+102,D. Sidibé,D,2:4,holder,AEK Athens FC,4-2-3-1,1121330
+1986,D. Vida,D,2:3,holder,AEK Athens FC,4-2-3-1,1121330
+20689,H. Moukoudi,D,2:2,holder,AEK Athens FC,4-2-3-1,1121330
+2685,E. Hajisafi,D,2:1,holder,AEK Athens FC,4-2-3-1,1121330
+35576,O. Pineda,M,3:2,holder,AEK Athens FC,4-2-3-1,1121330
+3011,D. Szymański,M,3:1,holder,AEK Athens FC,4-2-3-1,1121330
+2719,N. Amrabat,M,4:3,holder,AEK Athens FC,4-2-3-1,1121330
+2811,S. Zuber,M,4:2,holder,AEK Athens FC,4-2-3-1,1121330
+1818,M. Gaćinović,M,4:1,holder,AEK Athens FC,4-2-3-1,1121330
+93059,L. García,F,5:1,holder,AEK Athens FC,4-2-3-1,1121330
+612,E. Ponce,F,,substitute,AEK Athens FC,4-2-3-1,1121330
+50009,J. Jønsson,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+606,P. Mantalos,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+19270,N. Eliasson,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+47011,S. Araújo,F,,substitute,AEK Athens FC,4-2-3-1,1121330
+2688,M. Mohammadi,D,,substitute,AEK Athens FC,4-2-3-1,1121330
+585,P. Ginis,G,,substitute,AEK Athens FC,4-2-3-1,1121330
+2883,R. Pizarro,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+602,K. Galanopoulos,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+61257,L. Rota,D,,substitute,AEK Athens FC,4-2-3-1,1121330
+1079,C. Stanković,G,,substitute,AEK Athens FC,4-2-3-1,1121330
+135835,G. Mitoglou,D,,substitute,AEK Athens FC,4-2-3-1,1121330

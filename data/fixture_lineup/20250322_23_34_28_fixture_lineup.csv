@@ -1,0 +1,95 @@
+player.id,player.name,player.pos,player.grid,player.type,team,formation,fixture.id
+1999,M. van Bommel,coach,,coach,Antwerp,4-2-3-1,1121330
+8574,J. Butez,G,1:1,holder,Antwerp,4-2-3-1,1121330
+6898,R. De Laet,D,2:4,holder,Antwerp,4-2-3-1,1121330
+162,T. Alderweireld,D,2:3,holder,Antwerp,4-2-3-1,1121330
+162568,S. Coulibaly,D,2:2,holder,Antwerp,4-2-3-1,1121330
+8701,J. Bataille,D,2:1,holder,Antwerp,4-2-3-1,1121330
+308836,M. Keita,M,3:2,holder,Antwerp,4-2-3-1,1121330
+340154,A. Vermeeren,M,3:1,holder,Antwerp,4-2-3-1,1121330
+191979,J. Ondrejka,M,4:3,holder,Antwerp,4-2-3-1,1121330
+541,J. Ekkelenkamp,M,4:2,holder,Antwerp,4-2-3-1,1121330
+267728,M. Balikwisha,M,4:1,holder,Antwerp,4-2-3-1,1121330
+183,V. Janssen,F,5:1,holder,Antwerp,4-2-3-1,1121330
+303679,Z. Van Den Bosch,D,,substitute,Antwerp,4-2-3-1,1121330
+51308,S. Vines,D,,substitute,Antwerp,4-2-3-1,1121330
+137403,A. Muja,F,,substitute,Antwerp,4-2-3-1,1121330
+161989,C. Scott,M,,substitute,Antwerp,4-2-3-1,1121330
+198347,A. Valencia,F,,substitute,Antwerp,4-2-3-1,1121330
+374902,N. Devalckeneer,G,,substitute,Antwerp,4-2-3-1,1121330
+47998,A. Yusuf,M,,substitute,Antwerp,4-2-3-1,1121330
+162511,S. Lammens,G,,substitute,Antwerp,4-2-3-1,1121330
+39121,C. Ejuke,F,,substitute,Antwerp,4-2-3-1,1121330
+395040,G. Ilenikhena,F,,substitute,Antwerp,4-2-3-1,1121330
+37188,G. Kerk,F,,substitute,Antwerp,4-2-3-1,1121330
+1974,M. Almeyda,coach,,coach,AEK Athens FC,4-2-3-1,1121330
+26821,G. Athanasiadis,G,1:1,holder,AEK Athens FC,4-2-3-1,1121330
+102,D. Sidibé,D,2:4,holder,AEK Athens FC,4-2-3-1,1121330
+1986,D. Vida,D,2:3,holder,AEK Athens FC,4-2-3-1,1121330
+20689,H. Moukoudi,D,2:2,holder,AEK Athens FC,4-2-3-1,1121330
+2685,E. Hajisafi,D,2:1,holder,AEK Athens FC,4-2-3-1,1121330
+35576,O. Pineda,M,3:2,holder,AEK Athens FC,4-2-3-1,1121330
+3011,D. Szymański,M,3:1,holder,AEK Athens FC,4-2-3-1,1121330
+2719,N. Amrabat,M,4:3,holder,AEK Athens FC,4-2-3-1,1121330
+2811,S. Zuber,M,4:2,holder,AEK Athens FC,4-2-3-1,1121330
+1818,M. Gaćinović,M,4:1,holder,AEK Athens FC,4-2-3-1,1121330
+93059,L. García,F,5:1,holder,AEK Athens FC,4-2-3-1,1121330
+612,E. Ponce,F,,substitute,AEK Athens FC,4-2-3-1,1121330
+50009,J. Jønsson,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+606,P. Mantalos,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+19270,N. Eliasson,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+47011,S. Araújo,F,,substitute,AEK Athens FC,4-2-3-1,1121330
+2688,M. Mohammadi,D,,substitute,AEK Athens FC,4-2-3-1,1121330
+585,P. Ginis,G,,substitute,AEK Athens FC,4-2-3-1,1121330
+2883,R. Pizarro,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+602,K. Galanopoulos,M,,substitute,AEK Athens FC,4-2-3-1,1121330
+61257,L. Rota,D,,substitute,AEK Athens FC,4-2-3-1,1121330
+1079,C. Stanković,G,,substitute,AEK Athens FC,4-2-3-1,1121330
+135835,G. Mitoglou,D,,substitute,AEK Athens FC,4-2-3-1,1121330
+4642,M. Dego,coach,,coach,Maccabi Haifa,4-3-3,1036635
+111326,I. Nitzan,G,1:1,holder,Maccabi Haifa,4-3-3,1036635
+105846,M. Kandil,D,2:4,holder,Maccabi Haifa,4-3-3,1036635
+8450,A. Seck,D,2:3,holder,Maccabi Haifa,4-3-3,1036635
+126540,O. Dahan,D,2:2,holder,Maccabi Haifa,4-3-3,1036635
+107199,P. Cornud,D,2:1,holder,Maccabi Haifa,4-3-3,1036635
+136155,M. Jaber,M,3:3,holder,Maccabi Haifa,4-3-3,1036635
+110541,G. Naor,M,3:2,holder,Maccabi Haifa,4-3-3,1036635
+8461,L. Refaelov,M,3:1,holder,Maccabi Haifa,4-3-3,1036635
+12939,D. Sabia,F,4:3,holder,Maccabi Haifa,4-3-3,1036635
+260871,E. Shuranov,F,4:2,holder,Maccabi Haifa,4-3-3,1036635
+304334,I. Hagag,F,4:1,holder,Maccabi Haifa,4-3-3,1036635
+48144,D. Sundgren,D,,substitute,Maccabi Haifa,4-3-3,1036635
+126500,A. Muhammad,M,,substitute,Maccabi Haifa,4-3-3,1036635
+110987,D. Haziza,M,,substitute,Maccabi Haifa,4-3-3,1036635
+50120,T. Chery,M,,substitute,Maccabi Haifa,4-3-3,1036635
+8601,F. Pierrot,F,,substitute,Maccabi Haifa,4-3-3,1036635
+163338,S. Podgoreanu,F,,substitute,Maccabi Haifa,4-3-3,1036635
+111335,S. Goldberg,D,,substitute,Maccabi Haifa,4-3-3,1036635
+56005,R. Gershon,D,,substitute,Maccabi Haifa,4-3-3,1036635
+163580,S. Keouf,G,,substitute,Maccabi Haifa,4-3-3,1036635
+111277,D. David,F,,substitute,Maccabi Haifa,4-3-3,1036635
+338735,A. Khalaili,F,,substitute,Maccabi Haifa,4-3-3,1036635
+263536,A. Zargari,,,substitute,Maccabi Haifa,4-3-3,1036635
+1607,L. Zauri,coach,,coach,Hamrun Spartans,3-5-2,1036635
+30764,F. Marchetti,G,1:1,holder,Hamrun Spartans,3-5-2,1036635
+55973,S. Borg,D,2:3,holder,Hamrun Spartans,3-5-2,1036635
+112421,Emerson Marcelina,D,2:2,holder,Hamrun Spartans,3-5-2,1036635
+45413,O. Bjeličić,D,2:1,holder,Hamrun Spartans,3-5-2,1036635
+55988,J. Mbong,M,3:5,holder,Hamrun Spartans,3-5-2,1036635
+280540,Elionay,M,3:4,holder,Hamrun Spartans,3-5-2,1036635
+80247,R. Prša,M,3:3,holder,Hamrun Spartans,3-5-2,1036635
+11173,Y. Nenov,M,3:2,holder,Hamrun Spartans,3-5-2,1036635
+112689,R. Camenzuli,M,3:1,holder,Hamrun Spartans,3-5-2,1036635
+160203,Jonny,F,4:2,holder,Hamrun Spartans,3-5-2,1036635
+66235,U. Đuranović,F,4:1,holder,Hamrun Spartans,3-5-2,1036635
+54104,Eder,F,,substitute,Hamrun Spartans,3-5-2,1036635
+7723,S. Paintsil,F,,substitute,Hamrun Spartans,3-5-2,1036635
+45459,N. Krstić,M,,substitute,Hamrun Spartans,3-5-2,1036635
+55980,J. Corbalan,M,,substitute,Hamrun Spartans,3-5-2,1036635
+14559,K. Bilić,D,,substitute,Hamrun Spartans,3-5-2,1036635
+96473,Tom,G,,substitute,Hamrun Spartans,3-5-2,1036635
+280716,S. Xerri,D,,substitute,Hamrun Spartans,3-5-2,1036635
+178919,M. Debono,G,,substitute,Hamrun Spartans,3-5-2,1036635
+55977,J. Zerafa,D,,substitute,Hamrun Spartans,3-5-2,1036635
+296816,S. Attard,F,,substitute,Hamrun Spartans,3-5-2,1036635
+68530,L. Montebello,F,,substitute,Hamrun Spartans,3-5-2,1036635
