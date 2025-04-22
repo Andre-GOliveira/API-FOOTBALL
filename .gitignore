@@ -1,4 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Editor settings (opcional, mas recomendado)
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de logs
+*.log
+
+# Arquivos temporários e de cache
+*.tmp
+*.bak
+*.old
+*.cache/
+.cache/
+
+# Arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de pacotes e distribuição
+build/
+dist/
+*.egg-info/
+
+# Arquivos de ambiente
 .env
-data
-dashboard
-contas
+.env.*
+
+# Pasta de dados (informado por você)
+data/
+dashboard/
+contas/
