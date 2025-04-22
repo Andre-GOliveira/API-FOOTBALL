@@ -39,7 +39,7 @@ dist/
 .env
 .env.*
 
-# Pasta de dados (informado por você)
+# Pasta de dados
 data/
 dashboard/
 contas/
