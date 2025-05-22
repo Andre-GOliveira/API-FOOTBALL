@@ -1,205 +1,136 @@
-Sistema de Extração de Dados de API de Futebol
-Visão Geral
-Este projeto é um sistema desenvolvido em Python para extrair dados de uma API de futebol. Ele automatiza a coleta de informações sobre ligas, times, partidas, escalações e estatísticas de jogadores, processando esses dados e salvando-os em arquivos CSV para análise posterior. O sistema é projetado para ser executado sequencialmente através de um script orquestrador (main.py).
+⚽ API-Football Data Pipeline
 
-Funcionalidades Principais
-Extração de dados de diversas fontes da API (ligas, times, partidas, etc.).
+Este projeto consiste em uma série de scripts em Python para extração, transformação e armazenamento de dados de futebol, utilizando a API-Football. O objetivo é estruturar e persistir informações ricas sobre ligas, times, partidas, estatísticas de jogadores e formações (lineups).
 
-Normalização e processamento dos dados JSON recebidos.
+📁 Estrutura dos Endpoints
 
-Tratamento de limites de taxa da API com sistema de lotes e pausas.
+/leagues
 
-Gerenciamento de registros já consultados para evitar reprocessamento desnecessário.
+Retorna a lista de ligas existentes no mundo, incluindo:
 
-Registro de erros e respostas vazias da API.
+Nome e país da liga;
 
-Salvamento dos dados extraídos e processados em formato CSV.
+Se a API disponibiliza dados de partidas, estatísticas de jogadores, eventos, etc.;
 
-Configuração flexível através de variáveis de ambiente.
+Cada liga é identificada por um ID único.
 
-Estrutura do Projeto
-O projeto é composto pelos seguintes scripts principais:
+/teams
 
-main.py: Script orquestrador que executa todos os módulos de extração em uma sequência predefinida.
+Lista os times participantes de uma liga em determinada temporada.
 
-utils.py: Contém funções utilitárias comuns usadas por outros scripts (ex: requisições à API, salvamento/carregamento de CSVs).
+Parâmetros necessários: league e season;
 
-leagues.py: Extrai informações sobre as ligas de futebol.
+Inclui nome do time, código, país, cidade, estádio, capacidade e data de fundação;
 
-Teams.py: Extrai informações sobre os times, filtrados por liga e temporada.
+Dados são normalizados e salvos em CSV.
 
-fixtures.py: Extrai informações sobre as partidas, filtradas por liga e temporada.
+/fixtures
 
-fixtures_lineups_PROD.py: Extrai as escalações (lineups) para partidas específicas.
+Lista todas as partidas de uma liga e temporada.
 
-fixtures_player.py: Extrai as estatísticas detalhadas dos jogadores em partidas específicas.
+Parâmetros necessários: league e season;
 
-.env: Arquivo para armazenar as credenciais da API (não versionado).
+Informações como data, local, status, times envolvidos, resultado, tempo regulamentar e pênaltis;
 
-Configuração
-Siga os passos abaixo para configurar e executar o projeto.
+Dados são transformados em uma tabela estruturada com informações de times, placares e rodadas.
 
-Pré-requisitos
-Python 3.7+
+/fixtures_player
 
-PIP (gerenciador de pacotes Python)
+Retorna as estatísticas detalhadas dos jogadores para cada partida.
 
-Instalação
-Clone o repositório (ou copie os arquivos):
+Parâmetro necessário: fixture (ID da partida);
 
-# Se estiver usando git
-# git clone <url_do_repositorio>
-# cd <nome_do_diretorio_do_projeto>
+Os scripts carregam previamente:
 
-Caso contrário, apenas certifique-se de que todos os arquivos .py estejam no mesmo diretório.
+A lista de partidas a consultar (derivada de /fixtures);
 
-Crie um ambiente virtual (recomendado):
+Partidas já consultadas com sucesso;
 
-python -m venv venv
-# No Windows
-venv\Scripts\activate
-# No macOS/Linux
-source venv/bin/activate
+Partidas com erro ou resposta vazia;
 
-Instale as dependências:
-Crie um arquivo requirements.txt com o seguinte conteúdo:
+Estatísticas incluem: gols, passes, dribles, duelos, cartões, posição, rating, etc.;
 
-pandas
-python-dotenv
+Os dados são transformados, normalizados e salvos em arquivos segmentados.
 
-E então instale as dependências:
+/fixtures_lineup
+
+Retorna a escalação (lineup) de cada time na partida.
+
+Parâmetro necessário: fixture (ID da partida);
+
+Os scripts também controlam partidas já consultadas e erros anteriores;
+
+Dados extraídos:
+
+Jogadores titulares e reservas;
+
+Treinador;
+
+Formação tática e posição dos jogadores;
+
+A estrutura finaliza com um DataFrame transformado com colunas padronizadas para cada jogador.
+
+⚙️ Execução e Organização
+
+Todos os scripts compartilham uma estrutura comum:
+
+Uso de variáveis de ambiente (API_HOST e API_KEY) via .env;
+
+Conexão HTTP usando http.client com autenticação via headers;
+
+Normalização e transformação dos dados com pandas;
+
+Logs em api_fetch_log.log e tratamento robusto para respostas vazias, erros ou limites da API;
+
+Controle de chamadas em lote para respeitar o limite da API (batch_size e interval);
+
+Salvamento dos dados em arquivos .csv organizados por tipo e ano, dentro da pasta /data.
+
+📦 Dependências
+
+Instale os requisitos com:
 
 pip install -r requirements.txt
 
-Variáveis de Ambiente
-Crie um arquivo chamado .env na raiz do projeto com as suas credenciais da API:
+Principais bibliotecas utilizadas:
 
-API_HOST=seu_api_host_aqui
-API_KEY=sua_api_key_aqui
+pandas
 
-Substitua seu_api_host_aqui e sua_api_key_aqui pelos valores corretos fornecidos pela API.
+python-dotenv
 
-Uso (Como Executar)
-Executando o Orquestrador
-Para executar todo o processo de extração de forma sequencial, utilize o script main.py:
+http.client
 
-python main.py
+json
 
-Este script irá importar e executar cada um dos módulos de extração na ordem definida internamente. Logs de execução serão exibidos no console e, para scripts específicos como fixtures_lineups_PROD.py e fixtures_player.py, também no arquivo api_fetch_log.log.
+urllib.parse
 
-Executando Scripts Individualmente
-Embora o main.py seja a forma recomendada de execução, cada script de extração individual (leagues.py, Teams.py, etc.) também pode ser executado diretamente, se necessário para testes ou extrações parciais:
+logging
 
-python leagues.py
-python Teams.py
-# e assim por diante
+📂 Organização das Pastas
 
-Lembre-se que ao executar individualmente, as dependências de dados entre scripts (ex: fixtures_player.py pode depender de uma lista de partidas gerada por fixtures.py) devem ser gerenciadas manualmente.
+api-football/
+├── 1_leagues.py
+├── 2_teams.py
+├── 2_fixtures.py
+├── 3_fixtures_player.py
+├── 4_fixtures_lineups.py
+├── utils.py
+├── .env
+├── data/
+│   ├── fixture_list/
+│   ├── consulted/
+│   ├── errors/
+│   ├── fixture_stats/
+│   ├── fixture_lineup/
+│   └── ...
+└── README.md
 
-Descrição Detalhada dos Scripts de Extração
-Cada script é responsável por interagir com um endpoint específico da API ou processar um tipo particular de dado.
+🛡️ Controle de Qualidade
 
-leagues.py (Endpoint: /leagues)
-Propósito: Busca a lista de todas as ligas de futebol disponíveis na API.
+Validação de dados ausentes ou vazios;
 
-Detalhes: Retorna informações sobre cada liga, incluindo seu ID único e detalhes sobre quais tipos de dados (estatísticas de jogadores, eventos de partidas, etc.) estão disponíveis para ela.
+Logs de erro e sucesso para rastreabilidade;
 
-Parâmetros: Nenhum parâmetro de entrada específico para a API (busca todas as ligas).
+Separação clara de erros por tipo (empty, limit, exception);
 
-Saída Principal: Arquivo CSV (ex: leagues_data.csv) contendo os dados normalizados das ligas.
-
-Teams.py (Endpoint: /teams)
-Propósito: Extrai a lista de times pertencentes a uma liga específica em uma determinada temporada.
-
-Detalhes: Fornece informações como código do time, nome, país de origem, detalhes do estádio (venue), data de fundação, etc.
-
-Parâmetros para API:
-
-league: ID da liga (obrigatório).
-
-season: Ano da temporada (obrigatório).
-
-(Estes parâmetros são configurados internamente no script, mas podem ser ajustados conforme a avaliação anterior sugeriu torná-los dinâmicos).
-
-Saída Principal: Arquivos CSV (ex: teams_fullinfo_{leagueID}_{season}.csv, teams_names_{leagueID}_{season}.csv).
-
-fixtures.py (Endpoint: /fixtures)
-Propósito: Coleta a lista de partidas (fixtures) para uma liga e temporada específicas.
-
-Detalhes: Inclui informações sobre cada partida, como data, horário, local, times envolvidos (mandante e visitante), status da partida, placares (tempo normal, prorrogação, pênaltis se houver) e algumas estatísticas gerais da partida.
-
-Parâmetros para API:
-
-league: ID da liga (obrigatório).
-
-season: Ano da temporada (obrigatório).
-
-(Configurados internamente no script).
-
-Saída Principal: Arquivo CSV (ex: fixtures_{leagueID}_{season}.csv) com os dados normalizados das partidas. Este arquivo pode servir de entrada para os scripts fixtures_player.py e fixtures_lineups_PROD.py.
-
-fixtures_player.py (Endpoint: /fixtures/players)
-Propósito: Busca as estatísticas detalhadas de cada jogador em partidas específicas.
-
-Detalhes: O script carrega uma lista de IDs de partidas (geralmente obtida a partir da saída de fixtures.py). Ele gerencia uma lista de partidas já consultadas e partidas que resultaram em erro para otimizar as chamadas à API. As estatísticas podem incluir gols, assistências, passes, desarmes, dribles, cartões, posição em campo, rating, etc.
-
-Parâmetros para API:
-
-fixture: ID da partida (obrigatório).
-
-Saída Principal:
-
-Arquivo CSV com estatísticas dos jogadores (ex: data/fixture_stats/{timestamp}_fixture_team_stats.csv).
-
-Arquivos CSV em data/consulted/ e data/errors/ para rastrear o status das consultas.
-
-fixtures_lineups_PROD.py (Endpoint: /fixtures/lineups)
-Propósito: Extrai as informações de escalação (lineup) para cada time em partidas específicas.
-
-Detalhes: Similar ao fixtures_player.py, este script utiliza uma lista de IDs de partidas. Ele também gerencia o histórico de consultas e erros. Os dados de lineup incluem a lista de jogadores titulares, reservas, o técnico, a formação tática (ex: 4-3-3) e a posição de cada jogador.
-
-Parâmetros para API:
-
-fixture: ID da partida (obrigatório).
-
-Saída Principal:
-
-Arquivo CSV com os dados de escalação (ex: data/fixture_lineup/{timestamp}_fixture_lineup.csv).
-
-Arquivos CSV em data/consulted/ e data/errors/.
-
-Estrutura de Dados de Saída
-Os dados extraídos e processados são salvos em arquivos CSV, geralmente dentro de um diretório data/ na raiz do projeto. Este diretório pode conter subpastas para melhor organização, como:
-
-data/leagues_data.csv
-
-data/teams_fullinfo_X_Y.csv
-
-data/fixtures_X_Y.csv
-
-data/fixture_list/: Pode conter listas de fixtures para processamento.
-
-data/fixture_stats/: Contém as estatísticas dos jogadores.
-
-data/fixture_lineup/: Contém os dados de escalação.
-
-data/consulted/: CSVs rastreando IDs já consultados com sucesso.
-
-data/errors/: CSVs rastreando IDs que resultaram em erro ou resposta vazia.
-
-Os nomes dos arquivos frequentemente incluem timestamps ou identificadores (como ID da liga e temporada) para facilitar a identificação.
-
-Utilitários (utils.py)
-O script utils.py é fundamental para o projeto, fornecendo funções reutilizáveis para:
-
-fetch_data(endpoint, params): Função genérica para realizar requisições GET à API, tratando a autenticação e a resposta JSON básica.
-
-save_to_csv(df, filepath): Salva um DataFrame Pandas em um arquivo CSV.
-
-load_from_csv(filepath): Carrega dados de um arquivo CSV para um DataFrame Pandas.
-
-save_if_not_empty(df, folder, filename): Salva um DataFrame apenas se não estiver vazio, útil para logs de erro e dados condicionais.
-
-Ele também é responsável por carregar as variáveis de ambiente (API_HOST, API_KEY) do arquivo .env usando python-dotenv.
-
-Este README deve servir como um bom ponto de partida. Você pode adicionar mais seções conforme necessário, como "Resolução de Problemas Comuns", "Contribuições" ou "Licença".
+Verificação para evitar reconsultas desnecessárias.
